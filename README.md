@@ -1,7 +1,7 @@
 # Memory game
 
 <div align="center">
-  Solución para el desafío de <a href="https://go.rviewer.io/dev-memory-game-es/">MoureDev & rviewer</a>
+  <h2>Solución para el desafío de <a href="https://go.rviewer.io/dev-memory-game-es/">MoureDev & rviewer</a></h2>
   
   <h3>
     <a href="https://richardson-05.github.io/memory_game/">Probar juego</a>
