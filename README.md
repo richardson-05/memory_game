@@ -31,7 +31,7 @@
 <img src="./img/muestras/movil_facil.JPG" />
   </div>
 
-# Contact
+# Contactos
 - LinkedIn [Richardson Mercedes](https://www.linkedin.com/in/richardson-mercedes-ab84241ab/)
 - GitHub [@richardson-05](https://github.com/richardson-05)
 - Twitter [@RichardsonMerc2](https://twitter.com/RichardsonMerc2)
