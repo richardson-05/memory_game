@@ -1,0 +1,936 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300&family=Space+Mono:wght@700&display=swap');
+
+/********** Estilos generales **********/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #333842;
+  font-size: 18px;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #26292f;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #12151a;
+  border: 3.5px solid #26292f;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+/********** Estilos para el header y menu de navegación **********/
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #21252B;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px -3px 10px 0px #ffffff;
+}
+
+.dv_btn_menu {
+  display: none;
+}
+
+.btn_menu {
+  text-decoration: none;
+  color: #ffffff;
+  position: fixed;
+  left: 20px;
+  top: 15px;
+  font-size: 30px;
+}
+
+header .dv_logo a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+header .dv_logo a:hover {
+  background: #ffffff;
+  color: #000;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: all .7s;
+  -webkit-transition: all .7s;
+  -moz-transition: all .7s;
+  -ms-transition: all .7s;
+  -o-transition: all .7s;
+}
+header .dv_logo a:hover::after {
+  content: "Richardson Mercedes";
+  padding: 0 10px;
+  font-weight: normal;
+}
+
+header .dv_menu nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header .dv_menu nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+header .dv_menu nav ul li a:hover:not(a.active) {
+  box-shadow: 0px 10px 10px -8px #ffffff;
+}
+a.active {
+  border-bottom: 2px solid #ffffff;
+  position: relative;
+}
+
+a.active.msg::after {
+  content: "Click para no jugar";
+  background-color: rgba(0, 0, 0, 0.61);
+  font-size: 10px;
+  position: absolute;
+  width: max-content;
+  bottom: -8px;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  -webkit-transform: translate(-50%, 150%);
+  -moz-transform: translate(-50%, 150%);
+  -ms-transform: translate(-50%, 150%);
+  -o-transform: translate(-50%, 150%);
+  padding: 0 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+a.active.msg::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.61);
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  -webkit-transform: translate(-50%, 150%);
+  -moz-transform: translate(-50%, 150%);
+  -ms-transform: translate(-50%, 150%);
+  -o-transform: translate(-50%, 150%);
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
+}
+
+/********** Estilos para el main de la página **********/
+
+main {
+  margin-top: 100px
+}
+
+.sec_win, .sec_change_lvl {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: auto;
+  background: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 10;
+}
+
+.sec_win .dv_win {
+  border: 3px solid #0dac5d;
+  width: 600px;
+  background-color: #0a7941;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.sec_home_page {
+  display: flex;
+}
+
+.dv_inicio_app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  box-shadow: 0px 0px 10px 2px #000000;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.dv_inicio_app .dv_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+}
+
+.dv_inicio_app .dv_container .dv_pregunta_inicio {
+  font-size: 22px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.logo_inicio {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.question_face {
+  font-size: 30px;
+  margin-top: 10px;
+  display: block;  
+}
+
+.sec_win .dv_results {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 20px;
+  line-height: 30px;
+  margin: 15px 0;
+}
+
+.sec_win .dv_results h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sec_win .dv_results h2::before {
+  content: "⭐";
+  font-size: 15px;
+}
+
+.sec_win .dv_results h2::after {
+  content: "⭐";
+  font-size: 15px;
+}
+
+.sec_win .dv_btns .btn_play_again,
+.sec_win .dv_btns .btn_play_next {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #0cac47;
+  color: #ffffff;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  cursor: pointer;
+}
+
+.sec_win .dv_btns .btn_play_again:hover,
+.sec_win .dv_btns .btn_play_next:hover {
+  background-color: #0b8a39;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -o-transition: .2s;
+}
+
+.sec_change_lvl .dv_change_lvl {
+  border: 3px solid #0d72ac;
+  width: 600px;
+  background-color: #0a3879;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.sec_change_lvl .dv_btns .btn_confirm,
+.sec_change_lvl .dv_btns .btn_cancel {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #1469b0;
+  color: #ffffff;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  cursor: pointer;
+}
+
+.sec_change_lvl .dv_btns {
+  margin-top: 20px;
+}
+
+.sec_change_lvl .dv_btns .btn_confirm:hover,
+.sec_change_lvl .dv_btns .btn_cancel:hover {
+  background-color: #0c59ac;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -o-transition: .2s;
+}
+
+.sec_change_lvl .dv_change_lvl h2 {
+  font-size: 20px;
+}
+
+.sec_select_level h4 {
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0 10px 0;
+}
+
+.sec_select_level .dv_levels {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.sec_select_level .dv_levels .btn,
+.dv_btn_pausar_reiniciar .btn_pausar,
+.dv_btn_pausar_reiniciar .btn_reiniciar,
+.dv_inicio_app .dv_container .btn_inicio_rapido {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #21252B;
+  color: #ffffff;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  cursor: pointer;
+}
+.sec_select_level .btn:hover,
+.dv_btn_pausar_reiniciar .btn_pausar:hover,
+.dv_btn_pausar_reiniciar .btn_reiniciar:hover,
+.dv_inicio_app .dv_container .btn_inicio_rapido:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transition: transform .5s;
+  -webkit-transition: transform .5s;
+  -moz-transition: transform .5s;
+  -ms-transition: transform .5s;
+  -o-transition: transform .5s;
+}
+
+.sec_select_level .btn:hover::after {
+  font-size: 12px;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  background-color: #21252B;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.sec_select_level .btn_easy:hover::after {
+  content: "4 x 4";
+}
+.sec_select_level .btn_medium:hover::after {
+  content: "4 x 6";
+}
+.sec_select_level .btn_hard:hover::after {
+  content: "5 x 6";
+}
+
+.sec_game {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.sec_game .dv_cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.sec_game .dv_values {
+  border-left: 1px solid #ffffff;
+  width: 50%;
+}
+
+.valor_contador {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 30px;
+}
+.valor_contador::before {
+  content: "Movimientos: ";
+}
+
+.valor_tiempo {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 30px;
+}
+.valor_tiempo::before {
+  content: "Tiempo de juego: ";
+}
+
+.cantidad_cartas_encontradas {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 30px;
+}
+.dv_cartas_encontradas .cantidad_cartas_encontradas::before {
+  content: "Cartas encontradas: ";
+}
+
+.dv_btn_pausar_reiniciar {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 30px;
+  gap: 10px;
+}
+
+.fila_tarjetas {
+  display: flex;
+  gap: 5px;
+  width: fit-content;
+  margin-top: 5px;
+}
+
+.tarjeta.activa {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+}
+
+.tarjeta.activa::before {
+  content: "";
+  background-image: none;
+  background-color: transparent;
+}
+
+.tarjeta {
+  background-color: #21252B; /**/
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.tarjeta::before {
+  content: "";
+  background-color: #21252B;
+  background-image: url(./img/icono_moure.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center;
+  color: #ffffff;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.frente_tarjeta {
+  backface-visibility: hidden;
+}
+
+/* Cara de las tarjetas*/
+.frente_tarjeta {
+  width: 70px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.img_tarjeta {
+  width: 70%;
+}
+
+.correcta {
+  background-color: #0a7941;
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+}
+.tarjeta.correcta::before {
+  content: "";
+  background-image: none;
+  background-color: transparent;
+}
+
+/********** Estilos para el footer **********/
+
+footer {
+  background-color: #23252F;
+  color: #ffffff;
+  margin-top: 50px;
+  display: flex;
+}
+
+footer h2 {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+footer .dv_left,
+footer .dv_rigth {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.dv_rigth .dv_contacts a {
+  text-decoration: none;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.dv_contacts .btn_linkedin:hover {
+  background-color: #01679e;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+}
+
+.dv_contacts .btn_instagram:hover {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+}
+
+.dv_contacts .btn_facebook:hover {
+  background-color: #3B5998;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+}
+
+.dv_contacts .btn_github:hover {
+  background-color: #000000;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+}
+
+.dv_rigth .dv_contacts a i {
+  color: #ffffff;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dv_rigth .dv_contacts {
+  margin-top: 20px;
+  display: flex;
+}
+
+/********** Ajustar a pantallas pequeñas **********/
+
+@media (max-width: 880px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main {
+    margin-top: 150px;
+  }
+  
+  .sec_game {
+    flex-direction: column-reverse;
+  }
+
+  .sec_game .dv_cards {
+    width: auto;
+    flex-grow: 1;
+  }
+
+  .sec_game .dv_values {
+    width: auto;
+    border-left: none;
+    border-bottom: 1px solid #ffffff;
+    flex-grow: 1;
+    margin: 0 10px;
+  }
+
+  .sec_game .dv_values.playing {
+    border-bottom: 1px solid #ffffff;
+    margin: 0 20px;
+  }
+
+  footer {
+    flex-direction: column-reverse;
+}
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 20px;
+  }
+
+  header {
+    height: 100vh;
+    justify-content: flex-start;
+    position: fixed;
+    box-shadow: none;
+  }
+
+  a.active.msg::after {
+    content: "Click en menu > juego para no jugar";
+    bottom: 260%;
+    left: 135%;
+  }
+
+  a.active.msg::before {
+    display: none;
+  }
+
+  .no_scroll {
+    overflow-y: hidden;
+  }
+
+  .active_menu {
+    left: 0;
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -ms-transition: .5s all;
+    -o-transition: .5s all;
+  }
+
+  .inactive_menu {
+    left: -100%;
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -ms-transition: .5s all;
+    -o-transition: .5s all;
+  }
+
+  .dv_btn_menu {
+    background-color: #21252B;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    display: block;
+    box-shadow: 0px -3px 10px 0px #ffffff;
+  }
+
+  header .dv_logo {
+    margin-top: 60px;
+  }
+  
+  header .dv_logo a:hover::after {
+    font-size: 20px;
+  }
+
+  header .dv_logo a {
+    font-size: 20px;
+  }
+
+  header .dv_menu {
+    height: 100%;
+    width: 100%;
+  }
+
+  header .dv_menu nav ul {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  header .dv_menu nav ul li {
+    margin-top: 20px;
+  }
+
+  main {
+    margin-top: 80px;
+  }
+
+  .sec_win .dv_win {
+    padding: 30px;
+  }
+
+  .frente_tarjeta {
+    width: 50px;
+    height: 60px;
+  }
+
+  .dv_btn_pausar_reiniciar {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 440px) {
+  .sec_select_level .dv_levels {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .sec_select_level .dv_levels .btn {
+    width: 70%;
+  }
+
+  a.active.msg::after {
+    bottom: 335%;
+    left: 130%;
+  }
+
+  .sec_select_level .btn:hover::after {
+    position: static;
+    font-size: 16px;
+    background-color: transparent;
+  }
+
+  .valor_contador {
+    font-size: 18px;
+  }
+  .valor_tiempo {
+    font-size: 18px;
+  }
+  
+  .cantidad_cartas_encontradas {
+    font-size: 18px;
+  }
+
+  footer .dv_left p {
+    font-size: 16px;
+  }
+
+  header .dv_logo {
+    margin-top: 90px;
+  }
+
+  header .dv_logo a:hover::after {
+    font-size: 16px;
+  }
+
+  .sec_win .dv_btns .btn_play_again,
+  .sec_win .dv_btns .btn_play_next {
+    display: block;
+    margin: 10px auto;   
+  }
+
+  .sec_change_lvl .dv_change_lvl {
+    padding: 30px;
+  }
+
+  .sec_change_lvl .dv_btns .btn_confirm,
+  .sec_change_lvl .dv_btns .btn_cancel {
+    display: block;
+    margin: 10px auto;  
+  }
+}
+
+@media (max-width: 360px) {
+  header {
+    padding: 0;
+  }
+
+  .dv_inicio_app .dv_container {
+    margin: 0 10px;
+    display: block;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .dv_inicio_app .dv_container .dv_pregunta_inicio {
+    font-size: 18px;
+  }
+  
+  .logo_inicio {
+    font-size: 35px;
+  }
+
+  .sec_select_level .dv_levels .btn {
+    width: 90%;
+  }
+
+  .sec_game .dv_values.playing {
+    margin: 0 10px;
+  }
+
+  .valor_contador {
+    padding: 5px 0px;
+  }
+  .valor_tiempo {
+    padding: 5px 0px;
+  }
+  
+  .cantidad_cartas_encontradas {
+    padding: 5px 0px;
+  }
+
+  .sec_win .dv_win {
+    padding: 30px 10px;
+  }
+
+  .sec_win .dv_win p {
+    font-size: 18px;
+  }
+
+  .sec_change_lvl .dv_change_lvl h2 {
+    font-size: 16px;
+  }
+}
