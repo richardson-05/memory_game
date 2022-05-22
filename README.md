@@ -4,9 +4,9 @@
   <h3>Solución para el desafío de <a href="https://go.rviewer.io/dev-memory-game-es/">MoureDev & rviewer</a></h3>
   
   <h3>
-    <a href="https://richardson-05.github.io/memory_game/">Probar juego</a>
+    <a href="https://richardson-05.github.io/memory_game/" target="_blank">Probar juego</a>
     <span> | </span>
-    <a href="https://github.com/richardson-05/memory_game">Código fuente</a>
+    <a href="https://www.linkedin.com/in/richardson-mercedes-ab84241ab/"  target="_blank">Feedback</a>
   </h3>
 </div>
 
