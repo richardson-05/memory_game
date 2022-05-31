@@ -278,7 +278,7 @@ function funcionTiempo() {
     });
 
     // Analizar si alcanzó el limite de tiempo
-    if (segundos == 10) {
+    if (minutos == 1) {
       //console.log("Perder");
       can_play = false;
       is_pause = true;
