@@ -276,6 +276,16 @@ function funcionTiempo() {
     document.querySelectorAll(".tarjeta").forEach(tarjeta => {
       tarjeta.style.userSelect = "none";
     });
+
+    // Analizar si alcanzó el limite de tiempo
+    if (segundos == 10) {
+      //console.log("Perder");
+      can_play = false;
+      is_pause = true;
+      clearInterval(interval);
+
+      funcionPerder();
+    }
 }
 //#endregion
 
@@ -510,5 +520,23 @@ function senalRetirarPartida() {
   setTimeout(() => {
     active.classList.remove("msg");
   }, 3000);
+}
+//#endregion
+
+
+//#region Funcion para cuando se pierde
+function funcionPerder() {
+  const dv_win = `<div class="dv_win">
+                    <h2>Se acbó el tiempo</h2>
+                    <h2>😥</h2>
+                    <br/>
+                    <div class="dv_btns">
+                      <button class="btn_play_again">Volver a jugar</button>
+                    </div>
+                  </div>`;
+  sec_win.innerHTML = dv_win;
+  sec_win.style.display = "flex";
+
+  document.querySelector(".btn_play_again").addEventListener("click", reiniciar);
 }
 //#endregion
